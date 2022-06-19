@@ -93,11 +93,7 @@ python3 demo.py
 
 ## 2. Creating Environment Variables for the Package
 
-Environment variables are used so file directories are not hard coded in the repository. Two environment variables are used in the ROS node, "CATKIN_WS_PATH" and "SNOWBOY_PYTHON3_PATH". 
-
-CATKIN_WS_PATH: is the directory the catkin workspace's source folder. This is needed for importing the pmdl files into the rospy node.
-
-SNOWBOY_PYTHON3_PATH:  is the directory of "snowboydecoder.py", which is used for hotword detection
+The environment variable "SNOWBOY_PYTHON3_PATH", which is the path for the header snowboydecoder.py, needs to be added in "~/.bashrc" so the rospy node can use it for hotword detection.
 
 Open "~/.bashrc":
 
@@ -109,7 +105,6 @@ In "~/.bashrc" add the following environment variables:
 
 ```
 export SNOWBOY_PYTHON3_PATH=/home/pi/snowboy/examples/Python3 # path to snowboy py3 resources
-export CATKIN_WS_PATH=/home/pi/catkin_ws/src				  # path to catkin_ws/src
 ```
 
 After saving and closing "~/.bashrc" Re-open the terminal or type "bash" to apply the changes:
