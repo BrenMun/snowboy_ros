@@ -7,6 +7,7 @@ Hotword models included in the package are:
 - "spot_sit.pmdl" - hotword model for the phrase "spot sit"
 - "spot_stand.pmdl" - hotword model for the phrase "spot stand"
 - "spot_down.pmdl" - hotword model for the phrase "spot down"
+
 When the node is run, the hotword detector will wait until one of these phrases are detected. It will then publish the name of the file corresponding to the detected phrase. For example, if the phrase "spot sit" was detected, the node would then publish the string "spot_sit". These sample models have only been trained with one voice type (Australian male). Therefore, it is not a guarantee that they work for everyone.
 
 ## Using Your Own Personal Hotword Models
