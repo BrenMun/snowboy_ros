@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import rospy
+import rospkg
 import sys
 import os
 sys.path.insert(1, os.getenv('SNOWBOY_PYTHON3_PATH')) # define SNOWBOY_PYTHON3_PATH in ~/.bashrc with "export SNOWBOY_PYTHON3_PATH = /snowboy/examples/Python3"
 import snowboydecoder
 from std_msgs.msg import String
 
-CATKIN_WS_PATH = os.getenv('CATKIN_WS_PATH') # define CATKIN_WS_PATH in ~/.bashrc with "export CATKIN_WS_PATH = /"your catkin_ws directory"/src"
 
 class SpotCmdDetector:
     def sit_callback(self):
@@ -25,11 +25,12 @@ class SpotCmdDetector:
     def __init__(self):
         # ROS VARIABLES
         rospy.init_node('spot_cmds')
-        self.message = ""
+        pkg_path = rospkg.RosPack().get_path("snowboy_ros")
         self.pub = rospy.Publisher("spot_cmds", String, queue_size = 10)
+        self.message = ""
         # SNOWBOY VARIABLES
-        path = f"{CATKIN_WS_PATH}/snowboy_ros/scripts/models"
-        self.models = [f"{path}/spot_sit.pmdl", f"{path}/spot_stand.pmdl", f"{path}/spot_down.pmdl"]
+        model_path = f"{pkg_path}/scripts/models"
+        self.models = [f"{model_path}/spot_sit.pmdl", f"{model_path}/spot_stand.pmdl", f"{model_path}/spot_down.pmdl"]
         self.callbacks = [self.sit_callback, self.stand_callback, self.down_callback]
                 
     def detect(self):
