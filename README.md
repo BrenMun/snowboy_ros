@@ -93,7 +93,7 @@ python3 demo.py
 
 ## 2. Creating Environment Variables for the Package
 
-The environment variable "SNOWBOY_PYTHON3_PATH", which is the path for the header snowboydecoder.py, needs to be added in "~/.bashrc" so the rospy node can use it for hotword detection.
+The environment variable "SNOWBOY_PYTHON3_PATH", which is the path for the header snowboydecoder.py, needs to be added to "~/.bashrc" so the rospy node can use snowboydecoder.HotwordDetector().
 
 Open "~/.bashrc":
 
@@ -101,10 +101,10 @@ Open "~/.bashrc":
 sudo nano ~/.bashrc
 ```
 
-In "~/.bashrc" add the following environment variables:
+In "~/.bashrc" add the following:
 
 ```
-export SNOWBOY_PYTHON3_PATH=/home/pi/snowboy/examples/Python3 # path to snowboy py3 resources
+export SNOWBOY_PYTHON3_PATH=/home/pi/snowboy/examples/Python3 # path to snowboydecoder.py
 ```
 
 After saving and closing "~/.bashrc" Re-open the terminal or type "bash" to apply the changes:
