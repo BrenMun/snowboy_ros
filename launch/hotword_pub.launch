@@ -1,0 +1,3 @@
+<launch>
+	<node pkg="snowboy_ros" type="hotword_publisher.py" name="hotword_publisher_launch"/>
+</launch>
