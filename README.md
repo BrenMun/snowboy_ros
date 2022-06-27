@@ -38,7 +38,7 @@ sudo apt-get install python-pyaudio python3-pyaudio sox
 Install libatlas:
 
 ```
-sub apt-get install libatlas-base-dev
+sudo apt-get install libatlas-base-dev
 ```
 
 Clone Snowboy from the seasalt-ai git repository (kitt-ai is discontinued):
