@@ -135,3 +135,30 @@ Displaying what the node publishes:
 rostopic echo /cmd_msgs
 ```
 
+## 4. Publishing to Another Machine Running ROS
+
+To set another machine as ROS Master, add the following environment variables in the raspberry pi's "~/.bashrc":
+
+```
+export ROS_MASTER_URI=http://"ip_of_other_machine":11311/ # add the ip of the other machine
+```
+On the other machine, set ROS_MASTER_URI as the following:
+
+```
+export ROS_MASTER_URI=http://localhost:11311/
+```
+Now run roscore on the other machine:
+
+```
+roscore
+```
+Run the node on the raspberry pi:
+
+```
+rosrun snowboy_ros hotword_publisher.py
+```
+The other machine should now be receiving string messages published by the node. To test this out echo the messages on the other machine:
+
+```
+rostopic echo /cmd_msgs
+```
