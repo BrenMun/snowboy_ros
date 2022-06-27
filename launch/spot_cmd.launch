@@ -1,3 +1,0 @@
-<launch>
-	<node pkg="snowboy_ros" type="spot_cmd_node.py" name="spot_cmd_launch"/>
-</launch>
